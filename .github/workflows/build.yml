@@ -7,6 +7,14 @@ on:
       - 'release'
       - 'release/*'
       - 'release-*'
+      - 'leapide-*'
+  pull_request:
+    branches:
+      - main
+      - 'release'
+      - 'release/*'
+      - 'release-*'
+      - 'leapide-*'
 
 env:
   NODE_VERSION: 12.15.0
@@ -21,7 +29,7 @@ env:
 jobs:
   setup:
     name: Set up
-    if: github.repository == 'microsoft/vscode-python'
+    #if: github.repository == 'microsoft/vscode-python'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -43,7 +51,7 @@ jobs:
 
   build-vsix:
     name: Build VSIX
-    if: github.repository == 'microsoft/vscode-python'
+    #if: github.repository == 'microsoft/vscode-python'
     needs: setup
     runs-on: ubuntu-latest
     steps:
